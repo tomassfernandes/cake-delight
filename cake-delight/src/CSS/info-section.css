@@ -1,0 +1,39 @@
+.info-section {
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 3.6rem;
+}
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.4rem;
+}
+
+.info-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 0.8rem;
+}
+
+.info-icon-div svg {
+  fill: #88043d;
+  width: 5rem;
+  height: 5rem;
+}
+
+.info-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #383838;
+  margin-top: 0.8rem;
+  text-align: center;
+}
+
+.info-p {
+  font-size: 1.2rem;
+  color: #383838;
+  text-align: center;
+}

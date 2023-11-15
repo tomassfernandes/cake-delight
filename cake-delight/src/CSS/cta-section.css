@@ -1,0 +1,71 @@
+.cta-section {
+  background-color: #f7e6ed;
+}
+
+.cta-section-main-div {
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.cta-grid {
+  display: grid;
+  grid-template-columns: 60% 40%;
+}
+
+.cta-left-grid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3.6rem;
+  padding: 0 6.4rem;
+}
+
+.cta-p {
+  font-size: 1.4rem;
+  color: #383838;
+}
+
+.cta-btn-div {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+}
+
+.cta-btn {
+  padding: 0.8rem 2rem;
+  cursor: pointer;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.6rem;
+  border: 2px solid #88043d;
+}
+
+.cta-btn-1 {
+  background-color: #f7e6ed;
+  color: #88043d;
+  font-weight: 700;
+}
+
+.cta-btn-2 {
+  background-color: #88043d;
+  color: white;
+  font-weight: 700;
+}
+
+.cta-right-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cta-cake-img {
+  width: 100%;
+}
+
+.icing-separator {
+  background-color: white;
+}
+
+.icing-img {
+  width: 100%;
+}
