@@ -7,6 +7,7 @@ import "./CSS/header-section.css";
 import "./CSS/cta-section.css";
 import "./CSS/info-section.css";
 import "./CSS/shop-section.css";
+import "./CSS/best-seller-section.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

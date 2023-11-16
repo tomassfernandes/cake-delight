@@ -1,0 +1,71 @@
+.cake-best-seller-div {
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  position: relative;
+  margin-top: 6.4rem;
+}
+
+.cake-best-seller-img {
+  width: 40%;
+}
+
+.best-seller-mini-div {
+  width: 14rem;
+  height: fit-content;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.best-seller-mini-div-img {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 50%;
+  filter: contrast(50%);
+  transition: all 0.5s;
+}
+
+.best-seller-mini-div:hover .best-seller-mini-div-img {
+  filter: contrast(100%);
+}
+
+.mini-div-1 {
+  top: 0;
+  left: 10%;
+}
+
+.mini-div-2 {
+  top: 50%;
+  left: 0;
+}
+
+.mini-div-3 {
+  bottom: -20%;
+  left: 10%;
+}
+
+.mini-div-4 {
+  top: 0;
+  right: 10%;
+}
+
+.mini-div-5 {
+  top: 50%;
+  right: 0;
+}
+
+.mini-div-6 {
+  bottom: -20%;
+  right: 10%;
+}
+
+.best-seller-mini-div-p {
+  text-align: center;
+  color: #383838;
+  margin-top: 0.8rem;
+}

@@ -15,6 +15,13 @@ html {
   color: #88043d;
 }
 
+.heading-secondary {
+  font-size: 4.2rem;
+  color: #88043d;
+  text-align: center;
+  font-family: "Agbalumo", sans-serif !important;
+}
+
 .section {
   max-width: 120rem;
   margin: 0 auto;

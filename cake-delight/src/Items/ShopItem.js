@@ -17,7 +17,7 @@ export default function ShopItem() {
       name: "Hazelnut",
       text: "Layers of moist hazelnut-infused cake are complemented by a luscious hazelnut buttercream, creating a symphony of textures and tastes. Topped with finely chopped hazelnuts for an added crunch, this cake is a perfect choice for those who appreciate the warm, toasty notes of hazelnuts.",
       icon: plusIcon,
-      price: 30,
+      price: 19.99,
       onDisplay: true,
     },
     {
@@ -26,7 +26,7 @@ export default function ShopItem() {
       name: "Red velvet",
       text: "With its velvety texture and subtle chocolate undertones, each layer is generously slathered with a smooth cream cheese frosting. The cake's scarlet allure makes it a visual delight, while the combination of flavors creates a harmonious balance between sweetness and tanginess. A timeless favorite for any occasion.",
       icon: plusIcon,
-      price: 30,
+      price: 29.99,
       onDisplay: true,
     },
     {
@@ -35,7 +35,7 @@ export default function ShopItem() {
       name: "Tiramisu",
       text: "Layers of coffee-soaked sponge cake alternate with a sumptuous mascarpone cream, creating a symphony of flavors reminiscent of the classic Tiramisu. Each bite offers a delicate balance of coffee-infused richness and the light, airy texture of the mascarpone.",
       icon: plusIcon,
-      price: 30,
+      price: 24.95,
       onDisplay: true,
     },
     {

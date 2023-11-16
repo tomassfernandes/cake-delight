@@ -1,11 +1,9 @@
-.shop-heading {
-  font-size: 3.6rem;
-  color: #88043d;
-  text-align: center;
-}
-
 .shop-section {
   padding: 9.6rem 3.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .type-cake-div {
@@ -18,17 +16,16 @@
 }
 
 .cake-type {
+  border-bottom: 2px solid #38383863;
   font-size: 1.6rem;
   color: #383838;
-  transition: all 0.3s;
+  transition: all 0.5s;
   cursor: pointer;
   font-weight: 500;
-  border-bottom: 2px solid white;
 }
 
 .cake-type:hover {
   color: #88043d;
-  transform: scale(1.1);
   border-bottom: 2px solid #88043d;
 }
 
@@ -99,4 +96,26 @@
 .shop-cake-btn:hover {
   background-color: white;
   color: #88043d;
+}
+
+.view-more-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4.6rem;
+  background: transparent;
+  border: none;
+  color: #383838;
+  cursor: pointer;
+}
+
+.view-more-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.view-more-icon svg {
+  margin-top: 0.4rem;
+  fill: #383838;
 }
