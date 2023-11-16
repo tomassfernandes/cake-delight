@@ -3,6 +3,7 @@ import CTASection from "./Sections/CTASection";
 import InfoSection from "./Sections/InfoSection";
 import ShopSection from "./Sections/ShopSection";
 import BestSellerSection from "./Sections/BestSellerSection";
+import OurStoreSection from "./Sections/OurStoreSection";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <InfoSection />
       <ShopSection />
       <BestSellerSection />
+      <OurStoreSection />
     </>
   );
 }

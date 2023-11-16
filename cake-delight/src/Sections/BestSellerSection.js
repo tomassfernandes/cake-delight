@@ -1,6 +1,6 @@
 export default function BestSellerSection() {
   return (
-    <section className="section">
+    <section className="section ">
       <h2 className="heading-secondary">Best Seller</h2>
       <div className="cake-best-seller-div">
         <img
@@ -28,8 +28,8 @@ export default function BestSellerSection() {
           />
 
           <p className="best-seller-mini-div-p">
-            Join the ranks of satisfied customers who have made our best-seller
-            their top choice, time and time again
+            Satisfied customers who have made our best-seller their top choice,
+            time and time again
           </p>
         </div>
 
@@ -40,7 +40,8 @@ export default function BestSellerSection() {
             alt="Strawberries, raspberries and bluberries"
           />
           <p className="best-seller-mini-div-p">
-            Luscious and decadent texture that defines our best-seller cake
+            Savor the pure, crisp taste of our freshly picked fruits. Burst of
+            natural sweetness
           </p>
         </div>
 
@@ -51,8 +52,8 @@ export default function BestSellerSection() {
             alt="Woman baking"
           />
           <p className="best-seller-mini-div-p">
-            Expertly crafted with precision and passion, each layer reflects the
-            dedication to perfection in every bite
+            Expertly crafted with precision and passion, perfection in every
+            bite
           </p>
         </div>
 
@@ -63,8 +64,7 @@ export default function BestSellerSection() {
             alt="Green field"
           />
           <p className="best-seller-mini-div-p">
-            Savor the essence of nature with our treats featuring carefully
-            selected biological ingredients
+            Savor the essence of nature with selected biological ingredients
           </p>
         </div>
 
@@ -76,8 +76,7 @@ export default function BestSellerSection() {
           />
 
           <p className="best-seller-mini-div-p">
-            Crafted with the finest ingredients, our cake promises a premium
-            taste experience
+            Crafted with the finest ingredients, a premium taste experience
           </p>
         </div>
       </div>
