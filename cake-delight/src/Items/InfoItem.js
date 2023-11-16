@@ -1,6 +1,7 @@
 export default function InfoItem() {
   const data = [
     {
+      id: 1,
       svg: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -15,6 +16,7 @@ export default function InfoItem() {
       text: "No more waiting, just instant joy!",
     },
     {
+      id: 2,
       svg: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -29,6 +31,7 @@ export default function InfoItem() {
       text: "Crafted with precision, using only the finest ingredients",
     },
     {
+      id: 3,
       svg: (
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +48,7 @@ export default function InfoItem() {
   ];
 
   return data.map((item) => (
-    <div className="info-div">
+    <div className="info-div" key={item.id}>
       <div className="info-icon-div">{item.svg}</div>
       <p className="info-title">{item.title}</p>
       <p className="info-p">{item.text}</p>

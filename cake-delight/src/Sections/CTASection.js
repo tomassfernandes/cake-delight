@@ -1,7 +1,7 @@
 export default function CTASection() {
   return (
     <section className="cta-section">
-      <div className="cta-section-main-div">
+      <div className="section">
         <div className="cta-grid">
           <div className="cta-left-grid">
             <h1 className="heading-primary">

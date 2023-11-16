@@ -14,3 +14,8 @@ html {
   font-size: 5.2rem;
   color: #88043d;
 }
+
+.section {
+  max-width: 120rem;
+  margin: 0 auto;
+}

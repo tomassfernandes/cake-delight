@@ -2,11 +2,6 @@
   background-color: #f7e6ed;
 }
 
-.cta-section-main-div {
-  max-width: 120rem;
-  margin: 0 auto;
-}
-
 .cta-grid {
   display: grid;
   grid-template-columns: 60% 40%;
