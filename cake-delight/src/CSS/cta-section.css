@@ -33,6 +33,11 @@
   border-radius: 5px;
   font-size: 1.6rem;
   border: 2px solid #88043d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2rem;
+  transition: all 0.5s;
 }
 
 .cta-btn-1 {
@@ -41,10 +46,30 @@
   font-weight: 700;
 }
 
+.cta-btn-1 svg {
+  opacity: 0;
+  transition: all 0.5s;
+  fill: #88043d;
+}
+
+.cta-btn-1:hover svg {
+  opacity: 1;
+}
+
 .cta-btn-2 {
   background-color: #88043d;
   color: white;
   font-weight: 700;
+}
+
+.cta-btn-2 svg {
+  transition: all 0.5s;
+  fill: white;
+  opacity: 0;
+}
+
+.cta-btn-2:hover svg {
+  opacity: 1;
 }
 
 .cta-right-grid {

@@ -1,5 +1,6 @@
 .header {
   background-color: #f7e6ed;
+  padding: 2.4rem 0;
 }
 
 .header-main-div {
@@ -35,6 +36,23 @@
   text-decoration: none;
   font-size: 1.6rem;
   cursor: pointer;
+  transition: all 0.5s;
+  position: relative; /* Add position: relative; */
+  display: inline-block;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: #3838388c;
+}
+
+.nav-link span {
+  display: inline-block;
+  transition: transform 0.7s; /* Add transition to the span */
+}
+
+.nav-link:hover span {
+  transform: rotate(360deg);
 }
 
 .header-icons-div {

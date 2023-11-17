@@ -77,5 +77,11 @@
 .coming-soon-socials-div svg {
   height: 4rem;
   width: 4rem;
+  fill: #88043da2;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.coming-soon-socials-div svg:hover {
   fill: #88043d;
 }

@@ -8,9 +8,18 @@ export default function Header() {
         </div>
 
         <nav className="nav">
-          <a className="nav-link">Home</a>
-          <a className="nav-link">Shop</a>
-          <a className="nav-link">Contact</a>
+          <a className="nav-link">
+            <span>H</span>ome
+          </a>
+          <a className="nav-link">
+            <span>S</span>hop
+          </a>
+          <a className="nav-link">
+            <span>A</span>bout Us
+          </a>
+          <a className="nav-link">
+            <span>C</span>ontact
+          </a>
         </nav>
         <div className="header-icons-div">
           <svg
