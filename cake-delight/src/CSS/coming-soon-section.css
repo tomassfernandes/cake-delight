@@ -1,0 +1,81 @@
+.coming-soon-section {
+  padding-top: 3.6rem;
+  padding-bottom: 9.6rem;
+  background-color: #f7e6ed;
+}
+
+.coming-soon-img-background {
+  background-image: url("/public/img/donuts-background.webp");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  border-radius: 10px;
+  padding: 9.6rem;
+  margin-top: 3.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+  border: 2px solid #88043d;
+}
+
+.coming-soon-heading-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dots-animation {
+  width: 10rem;
+  height: 10rem;
+  align-self: flex-end;
+  margin-bottom: -3.6rem;
+  margin-left: -2rem;
+}
+
+.coming-soon-p {
+  color: #88043d;
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.coming-soon-p span {
+  color: #88043d;
+  font-weight: 700;
+  border-bottom: 2px solid #88043d;
+}
+
+.coming-soon-timer-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 2.4rem;
+}
+
+.coming-soon-timer-p {
+  color: #88043d;
+  font-size: 3.6rem;
+  font-weight: 600;
+}
+
+.timer-div {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.coming-soon-socials-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+}
+
+.coming-soon-socials-div svg {
+  height: 4rem;
+  width: 4rem;
+  fill: #88043d;
+}

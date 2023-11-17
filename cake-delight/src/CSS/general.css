@@ -22,6 +22,13 @@ html {
   font-family: "Agbalumo", sans-serif !important;
 }
 
+.h4 {
+  font-size: 1.8rem;
+  color: #383838;
+  margin-top: 1.8rem;
+  margin-bottom: 2.4rem;
+}
+
 .section {
   max-width: 120rem;
   margin: 0 auto;

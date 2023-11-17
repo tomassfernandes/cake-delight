@@ -4,6 +4,8 @@ import InfoSection from "./Sections/InfoSection";
 import ShopSection from "./Sections/ShopSection";
 import BestSellerSection from "./Sections/BestSellerSection";
 import OurStoreSection from "./Sections/OurStoreSection";
+import ComingSoonSection from "./Sections/ComingSoonSection";
+import Footer from "./Sections/Footer";
 
 function App() {
   return (
@@ -14,6 +16,8 @@ function App() {
       <ShopSection />
       <BestSellerSection />
       <OurStoreSection />
+      <ComingSoonSection />
+      <Footer />
     </>
   );
 }

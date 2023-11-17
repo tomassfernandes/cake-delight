@@ -19,6 +19,8 @@
 
 .our-store-section {
   background-color: #f7e6ed;
+  position: relative;
+  padding-bottom: 12rem;
 }
 
 .our-store-grid-section {
