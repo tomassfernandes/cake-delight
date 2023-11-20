@@ -116,6 +116,6 @@
 }
 
 .view-more-icon svg {
-  margin-top: 0.4rem;
   fill: #383838;
+  transition: all 0.3s;
 }

@@ -18,9 +18,8 @@ export default function ComingSoonSection() {
           Get ready for a delightful journey into the world of exquisite
           flavors! Our <span>soon-to-be-released</span> donuts are crafted with
           passion and creativity. From classic favorites to innovative twists,
-          our artisanal donuts are a celebration of sweetness. We're diligently
-          working to bring you a tempting array of flavors that will elevate
-          your taste buds to new heights!
+          we're diligently working to bring you a tempting array of flavors that
+          will elevate your taste buds to new heights!
         </p>
         <div className="coming-soon-timer-div">
           <Countdown

@@ -1,4 +1,6 @@
-export default function ShopItem() {
+import { useState } from "react";
+
+export default function ShopItem({ displayAllCakes, cakeType }) {
   const plusIcon = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -19,6 +21,7 @@ export default function ShopItem() {
       icon: plusIcon,
       price: 19.99,
       onDisplay: true,
+      vegetarian: true,
     },
     {
       id: 2,
@@ -55,6 +58,8 @@ export default function ShopItem() {
       icon: plusIcon,
       price: 15.99,
       onDisplay: false,
+      vegetarian: true,
+      vegan: true,
     },
     {
       id: 6,
@@ -64,6 +69,7 @@ export default function ShopItem() {
       icon: plusIcon,
       price: 20.99,
       onDisplay: false,
+      vegetarian: true,
     },
     {
       id: 7,
@@ -82,6 +88,8 @@ export default function ShopItem() {
       icon: plusIcon,
       price: 9.99,
       onDisplay: false,
+      vegetarian: true,
+      vegan: true,
     },
     {
       id: 9,
@@ -91,18 +99,30 @@ export default function ShopItem() {
       icon: plusIcon,
       price: 16.99,
       onDisplay: false,
+      vegetarian: true,
+      vegan: true,
     },
   ];
 
-  return data.map(
+  const filteredCakes =
+    cakeType.toLowerCase() === "all cakes"
+      ? data
+      : data.map((item) => ({
+          ...item,
+          onDisplay:
+            (cakeType.toLowerCase() === "vegetarian" && item.vegetarian) ||
+            (cakeType.toLowerCase() === "vegan" && item.vegan),
+        }));
+
+  return filteredCakes.map(
     (item) =>
-      item.onDisplay && (
+      (displayAllCakes || item.onDisplay) && (
         <div className="shop-cake-div" key={item.id}>
           <img className="shop-cake-img" src={item.img} alt={item.name} />
           <div className="cake-text-div">
             <h3 className="shop-cake-name">
               {item.name}
-              <span className="cake-plus-icon">{item.icon}</span>
+              <span className="cake-plus-icon">{plusIcon}</span>
             </h3>
             <p className="shop-cake-text">{item.text}</p>
             <p className="cake-price">{`${item.price}€`}</p>
