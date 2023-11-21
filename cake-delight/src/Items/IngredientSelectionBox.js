@@ -1,7 +1,11 @@
-// IngredientSelectionBox.js
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function IngredientSelectionBox({ onClose, ingredients }) {
+export default function IngredientSelectionBox({
+  onClose,
+  ingredients,
+  onPriceChange,
+  isOpen,
+}) {
   const removeIcon = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
@@ -27,6 +31,7 @@ export default function IngredientSelectionBox({ onClose, ingredients }) {
         ...prevIngredients,
         ingredient,
       ]);
+      onPriceChange(0.5); // Add 0.50€ for each added ingredient
     }
   };
 
@@ -37,6 +42,7 @@ export default function IngredientSelectionBox({ onClose, ingredients }) {
       const updatedIngredients = [...selectedIngredients];
       updatedIngredients.splice(indexToRemove, 1);
       setSelectedIngredients(updatedIngredients);
+      onPriceChange(-0.5); // Remove 0.50€ for each removed ingredient
     }
   };
 
@@ -53,8 +59,13 @@ export default function IngredientSelectionBox({ onClose, ingredients }) {
     return selectedIngredients.filter((item) => item === ingredient).length;
   };
 
+  useEffect(() => {
+    // Log the selected ingredients
+    console.log("Selected Ingredients:", selectedIngredients);
+  }, [selectedIngredients]);
+
   return (
-    <div className="ingredient-selection-box">
+    <div className={`ingredient-selection-box ${isOpen ? "open" : ""}`}>
       <h4>Add extra:</h4>
       <ul className="extra-ingredient-div">
         {ingredients.map((ingredient) => (

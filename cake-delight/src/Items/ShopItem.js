@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import IngredientSelectionBox from "./IngredientSelectionBox";
 
@@ -136,15 +136,43 @@ export default function ShopItem({ displayAllCakes, cakeType }) {
             (cakeType.toLowerCase() === "vegan" && item.vegan),
         }));
 
-  const [selectedCakeId, setSelectedCakeId] = useState(null);
+  const [selectedCakes, setSelectedCakes] = useState({});
 
   const handlePlusIconClick = (cakeId) => {
-    setSelectedCakeId((prevId) => (prevId === cakeId ? null : cakeId));
+    setSelectedCakes((prevCakes) => ({
+      ...Object.fromEntries(
+        Object.entries(prevCakes).map(([key, value]) => [
+          key,
+          key === cakeId ? null : value,
+        ])
+      ),
+      [cakeId]: prevCakes[cakeId]
+        ? null
+        : data.find((item) => item.id === cakeId),
+    }));
   };
 
-  const handleIngredientSelectionBoxClose = () => {
-    setSelectedCakeId(null);
+  const handleIngredientSelectionBoxClose = (cakeId) => {
+    setSelectedCakes((prevCakes) => ({
+      ...prevCakes,
+      [cakeId]: null,
+    }));
   };
+
+  const handlePriceChange = (cakeId, priceChange) => {
+    setSelectedCakes((prevCakes) => ({
+      ...prevCakes,
+      [cakeId]: {
+        ...prevCakes[cakeId],
+        price: +(prevCakes[cakeId].price + priceChange).toFixed(2), // Round to 2 decimal places
+      },
+    }));
+  };
+
+  useEffect(() => {
+    // Log the selected cakes with their updated prices
+    console.log("Selected Cakes:", selectedCakes);
+  }, [selectedCakes]);
 
   return (
     <>
@@ -160,17 +188,23 @@ export default function ShopItem({ displayAllCakes, cakeType }) {
                     className="cake-plus-icon"
                     onClick={() => handlePlusIconClick(item.id)}
                   >
-                    {selectedCakeId === item.id ? removeIcon : plusIcon}
+                    {selectedCakes[item.id] ? removeIcon : plusIcon}
                   </span>
                 </h3>
                 <p className="shop-cake-text">{item.text}</p>
-                {selectedCakeId === item.id && (
+                {selectedCakes[item.id] && (
                   <IngredientSelectionBox
-                    onClose={handleIngredientSelectionBoxClose}
+                    onClose={() => handleIngredientSelectionBoxClose(item.id)}
                     ingredients={item.ingredients}
+                    onPriceChange={(change) =>
+                      handlePriceChange(item.id, change)
+                    }
+                    isOpen={!!selectedCakes[item.id]}
                   />
                 )}
-                <p className="cake-price">{`${item.price}€`}</p>
+                <p className="cake-price">{`${
+                  selectedCakes[item.id]?.price ?? item.price
+                }€`}</p>
                 <button className="shop-cake-btn">Add to cart</button>
               </div>
             </div>
