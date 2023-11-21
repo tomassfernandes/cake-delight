@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import IngredientSelectionBox from "./IngredientSelectionBox";
+
 export default function ShopItem({ displayAllCakes, cakeType }) {
   const plusIcon = (
     <svg
@@ -9,6 +11,17 @@ export default function ShopItem({ displayAllCakes, cakeType }) {
       width="24"
     >
       <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+    </svg>
+  );
+
+  const removeIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 -960 960 960"
+      width="24"
+    >
+      <path d="M200-440v-80h560v80H200Z" />
     </svg>
   );
 
@@ -22,6 +35,7 @@ export default function ShopItem({ displayAllCakes, cakeType }) {
       price: 19.99,
       onDisplay: true,
       vegetarian: true,
+      ingredients: ["Chocolate", "Hazelnuts", "Choclate Chips"],
     },
     {
       id: 2,
@@ -31,6 +45,7 @@ export default function ShopItem({ displayAllCakes, cakeType }) {
       icon: plusIcon,
       price: 29.99,
       onDisplay: true,
+      ingredients: ["Vanilla", "Cream", "Fruits"],
     },
     {
       id: 3,
@@ -40,6 +55,7 @@ export default function ShopItem({ displayAllCakes, cakeType }) {
       icon: plusIcon,
       price: 24.95,
       onDisplay: true,
+      ingredients: ["Chocolate", "Coffee", "Biscuits"],
     },
     {
       id: 4,
@@ -49,6 +65,7 @@ export default function ShopItem({ displayAllCakes, cakeType }) {
       icon: plusIcon,
       price: 22.99,
       onDisplay: false,
+      ingredients: ["Cream", "Biscuit", "Fruits"],
     },
     {
       id: 5,
@@ -60,6 +77,7 @@ export default function ShopItem({ displayAllCakes, cakeType }) {
       onDisplay: false,
       vegetarian: true,
       vegan: true,
+      ingredients: ["Chocolate", "Choclate Chips"],
     },
     {
       id: 6,
@@ -70,6 +88,7 @@ export default function ShopItem({ displayAllCakes, cakeType }) {
       price: 20.99,
       onDisplay: false,
       vegetarian: true,
+      ingredients: ["Chocolate Fudge", "Choclate Chips"],
     },
     {
       id: 7,
@@ -79,6 +98,7 @@ export default function ShopItem({ displayAllCakes, cakeType }) {
       icon: plusIcon,
       price: 27.99,
       onDisplay: false,
+      ingredients: ["Chocolate", "Caramel", "Twix"],
     },
     {
       id: 8,
@@ -90,6 +110,7 @@ export default function ShopItem({ displayAllCakes, cakeType }) {
       onDisplay: false,
       vegetarian: true,
       vegan: true,
+      ingredients: ["Chocolate", "Choclate Chips"],
     },
     {
       id: 9,
@@ -101,6 +122,7 @@ export default function ShopItem({ displayAllCakes, cakeType }) {
       onDisplay: false,
       vegetarian: true,
       vegan: true,
+      ingredients: ["Chocolate", "Pumpkin Puree", "Cinnamon"],
     },
   ];
 
@@ -114,21 +136,46 @@ export default function ShopItem({ displayAllCakes, cakeType }) {
             (cakeType.toLowerCase() === "vegan" && item.vegan),
         }));
 
-  return filteredCakes.map(
-    (item) =>
-      (displayAllCakes || item.onDisplay) && (
-        <div className="shop-cake-div" key={item.id}>
-          <img className="shop-cake-img" src={item.img} alt={item.name} />
-          <div className="cake-text-div">
-            <h3 className="shop-cake-name">
-              {item.name}
-              <span className="cake-plus-icon">{plusIcon}</span>
-            </h3>
-            <p className="shop-cake-text">{item.text}</p>
-            <p className="cake-price">{`${item.price}€`}</p>
-            <button className="shop-cake-btn">Add to cart</button>
-          </div>
-        </div>
-      )
+  const [selectedCakeId, setSelectedCakeId] = useState(null);
+
+  const handlePlusIconClick = (cakeId) => {
+    setSelectedCakeId((prevId) => (prevId === cakeId ? null : cakeId));
+  };
+
+  const handleIngredientSelectionBoxClose = () => {
+    setSelectedCakeId(null);
+  };
+
+  return (
+    <>
+      {filteredCakes.map(
+        (item) =>
+          (displayAllCakes || item.onDisplay) && (
+            <div className="shop-cake-div" key={item.id}>
+              <img className="shop-cake-img" src={item.img} alt={item.name} />
+              <div className="cake-text-div">
+                <h3 className="shop-cake-name">
+                  {item.name}
+                  <span
+                    className="cake-plus-icon"
+                    onClick={() => handlePlusIconClick(item.id)}
+                  >
+                    {selectedCakeId === item.id ? removeIcon : plusIcon}
+                  </span>
+                </h3>
+                <p className="shop-cake-text">{item.text}</p>
+                {selectedCakeId === item.id && (
+                  <IngredientSelectionBox
+                    onClose={handleIngredientSelectionBoxClose}
+                    ingredients={item.ingredients}
+                  />
+                )}
+                <p className="cake-price">{`${item.price}€`}</p>
+                <button className="shop-cake-btn">Add to cart</button>
+              </div>
+            </div>
+          )
+      )}
+    </>
   );
 }

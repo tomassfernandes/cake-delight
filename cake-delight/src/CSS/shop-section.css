@@ -119,3 +119,41 @@
   fill: #383838;
   transition: all 0.3s;
 }
+
+.ingredient-selection-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.ingredient-selection-box h4 {
+  color: #88043d;
+  font-size: 1.6rem;
+}
+
+.extra-ingredient-div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+.extra-ingredient-text-div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.extra-ingredient-text {
+  color: #383838;
+  font-size: 1.2rem;
+  cursor: pointer;
+  list-style: none;
+  font-weight: 500;
+}
+
+.ingredient-remove-icon svg {
+  fill: #383838;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
+}
