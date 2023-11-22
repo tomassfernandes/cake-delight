@@ -17,6 +17,17 @@ export default function IngredientSelectionBox({
     </svg>
   );
 
+  const plusIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      height="24"
+      viewBox="0 -960 960 960"
+      width="24"
+    >
+      <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+    </svg>
+  );
+
   const [selectedIngredients, setSelectedIngredients] = useState([]);
 
   const MAX_INGREDIENT_LIMIT = 3;
@@ -80,12 +91,21 @@ export default function IngredientSelectionBox({
                 ? `(${countIngredients(ingredient)})`
                 : ""}
             </li>
-            <span
-              className="ingredient-remove-icon"
-              onClick={() => handleRemoveIngredient(ingredient)}
-            >
-              {removeIcon}
-            </span>
+            <div className="ingredient-icon-div">
+              <span
+                className="ingredient-icon"
+                key={ingredient}
+                onClick={() => handleIngredientSelect(ingredient)}
+              >
+                {plusIcon}
+              </span>
+              <span
+                className="ingredient-icon"
+                onClick={() => handleRemoveIngredient(ingredient)}
+              >
+                {removeIcon}
+              </span>
+            </div>
           </div>
         ))}
       </ul>

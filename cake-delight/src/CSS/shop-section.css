@@ -123,6 +123,7 @@
 .ingredient-selection-box {
   display: flex;
   flex-direction: column;
+  width: 40%;
 }
 
 .ingredient-selection-box h4 {
@@ -151,7 +152,14 @@
   font-weight: 500;
 }
 
-.ingredient-remove-icon svg {
+.ingredient-icon-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+}
+
+.ingredient-icon svg {
   fill: #383838;
   width: 1.5rem;
   height: 1.5rem;
