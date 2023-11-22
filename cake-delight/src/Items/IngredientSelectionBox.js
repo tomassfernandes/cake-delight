@@ -109,7 +109,9 @@ export default function IngredientSelectionBox({
           </div>
         ))}
       </ul>
-      <button onClick={handleConfirm}>Confirm</button>
+      <button className="ingredient-confirm-btn" onClick={handleConfirm}>
+        Confirm
+      </button>
     </div>
   );
 }
