@@ -11,6 +11,7 @@ import "./CSS/best-seller-section.css";
 import "./CSS/our-store-section.css";
 import "./CSS/coming-soon-section.css";
 import "./CSS/footer-section.css";
+import "./CSS/queries.css";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
