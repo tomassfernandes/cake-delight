@@ -1,0 +1,74 @@
+/*----------------------------------------
+----------- MAX WIDTH 76EM --------------
+-----------------------------------------*/
+
+@media (max-width: 76em) {
+  .section {
+    max-width: 97%;
+  }
+
+  .footer {
+    max-width: 97% !important;
+  }
+}
+
+/*----------------------------------------
+----------- MAX WIDTH 66EM --------------
+-----------------------------------------*/
+
+@media (max-width: 66em) {
+  .cta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cta-left-grid {
+    padding: 0 6.4rem;
+    margin-top: 6.4rem;
+  }
+
+  .cta-btn-div {
+    margin: 0 auto;
+  }
+
+  .cta-cake-img {
+    width: 80%;
+  }
+
+  .cake-best-seller-div {
+    width: 90%;
+  }
+
+  .cake-best-seller-img {
+    width: 50%;
+  }
+
+  .mini-div-1 {
+    top: 0;
+    left: 5%;
+  }
+
+  .mini-div-2 {
+    top: 50%;
+    left: 0;
+  }
+
+  .mini-div-3 {
+    bottom: -20%;
+    left: 5%;
+  }
+
+  .mini-div-4 {
+    top: 0;
+    right: 5%;
+  }
+
+  .mini-div-5 {
+    top: 50%;
+    right: 0;
+  }
+
+  .mini-div-6 {
+    bottom: -20%;
+    right: 5%;
+  }
+}

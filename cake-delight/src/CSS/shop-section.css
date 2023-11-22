@@ -41,10 +41,6 @@
   align-items: center;
 }
 
-.shop-cake-img {
-  width: 70%;
-}
-
 .cake-text-div {
   display: flex;
   flex-direction: column;
