@@ -1,4 +1,12 @@
+import { useRef } from "react";
+
 export default function Header() {
+  const navRef = useRef();
+
+  function showNavBar() {
+    navRef.current.classList.toggle("responsive-nav");
+  }
+
   return (
     <header className="header">
       <div className="header-main-div">
@@ -7,7 +15,7 @@ export default function Header() {
           <p className="logo-letter">Delight</p>
         </div>
 
-        <nav className="nav">
+        <nav ref={navRef} className="nav">
           <a className="nav-link">
             <span>H</span>ome
           </a>
@@ -20,8 +28,43 @@ export default function Header() {
           <a className="nav-link">
             <span>C</span>ontact
           </a>
+          <button onClick={showNavBar} className="nav-btn nav-close-btn">
+            <svg
+              style={{ fill: "white", color: "white", stroke: "white" }}
+              xmlns="http://www.w3.org/2000/svg"
+              class="ionicon"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="32"
+                d="M368 368L144 144M368 144L144 368"
+              />
+            </svg>
+          </button>
         </nav>
+
         <div className="header-icons-div">
+          <button onClick={showNavBar} className="nav-btn nav-menu-btn">
+            <svg
+              style={{ fill: "#383838", color: "#383838", stroke: "#383838" }}
+              xmlns="http://www.w3.org/2000/svg"
+              class="ionicon"
+              viewBox="0 0 512 512"
+            >
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-miterlimit="10"
+                stroke-width="32"
+                d="M80 160h352M80 256h352M80 352h352"
+              />
+            </svg>
+          </button>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="24"

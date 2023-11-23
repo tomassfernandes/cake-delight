@@ -48,6 +48,10 @@
   align-items: center;
 }
 
+.shop-cake-img {
+  width: 85%;
+}
+
 .shop-cake-name {
   font-size: 2.2rem;
   color: #88043d;

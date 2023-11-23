@@ -44,14 +44,14 @@ export default function OurStoreSection() {
             />
           </div>
 
-          <div className="our-store-img-div">
+          <div className="our-store-img-div grid-order-img">
             <img
               className="our-store-img"
               src="/img/our-store-img-3.webp"
               alt="Our staff working"
             />
           </div>
-          <div className="our-store-text-div">
+          <div className="our-store-text-div grid-order-text">
             <div className="our-store-icon-div">
               <svg
                 xmlns="http://www.w3.org/2000/svg"

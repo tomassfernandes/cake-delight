@@ -1,6 +1,6 @@
 export default function BestSellerSection() {
   return (
-    <section className="section ">
+    <section className="section best-seller-section">
       <h2 className="heading-secondary">Best Seller</h2>
       <div className="cake-best-seller-div">
         <img

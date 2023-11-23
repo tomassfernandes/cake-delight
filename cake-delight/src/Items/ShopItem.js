@@ -25,6 +25,29 @@ export default function ShopItem({ displayAllCakes, cakeType }) {
     </svg>
   );
 
+  const [onDisplay, setOnDisplay] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      // Check if the window width is less than or equal to 45em
+      const isMatch = window.matchMedia("(max-width: 45em)").matches;
+
+      // Update the state based on the match
+      setOnDisplay(isMatch);
+    };
+
+    // Initial check
+    handleResize();
+
+    // Attach event listener for window resize
+    window.addEventListener("resize", handleResize);
+
+    // Clean up the event listener when the component unmounts
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   const data = [
     {
       id: 1,
@@ -64,7 +87,7 @@ export default function ShopItem({ displayAllCakes, cakeType }) {
       text: "Savor the creamy delight of our cheesecake, a perfect blend of velvety texture and rich indulgence",
       icon: plusIcon,
       price: 22.99,
-      onDisplay: false,
+      onDisplay: onDisplay,
       ingredients: ["Cream", "Biscuit", "Fruits"],
     },
     {

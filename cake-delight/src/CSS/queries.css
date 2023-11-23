@@ -72,3 +72,286 @@
     right: 5%;
   }
 }
+
+/*----------------------------------------
+----------- MAX WIDTH 55EM --------------
+-----------------------------------------*/
+
+@media (max-width: 55em) {
+  .footer {
+    max-width: 100%;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .coming-soon-img-background {
+    padding: 1.6rem 3.6rem;
+  }
+}
+
+/*----------------------------------------
+----------- MAX WIDTH 45EM --------------
+-----------------------------------------*/
+
+@media (max-width: 45em) {
+  header .nav-btn {
+    display: block;
+  }
+
+  header nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2.4rem;
+    background-color: #88043d;
+    transition: all 1s;
+    transform: translateY(-100vh);
+  }
+
+  header .responsive-nav {
+    transform: none;
+  }
+
+  nav .nav-close-btn {
+    position: absolute;
+    top: 5rem;
+    right: 5rem;
+  }
+
+  .nav-link {
+    color: white;
+  }
+
+  .info-section {
+    width: 90%;
+  }
+
+  .shop-section {
+    padding: 9.6rem 0.8rem;
+  }
+
+  .shop-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cake-best-seller-div {
+    width: 100%;
+  }
+
+  .cake-best-seller-img {
+    width: 40%;
+  }
+
+  .best-seller-mini-div-img {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .best-seller-mini-div-p {
+    font-size: 0.8rem;
+  }
+
+  .our-store-grid-section {
+    max-width: 95%;
+  }
+
+  .our-store-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid-order-text {
+    order: 1;
+  }
+
+  .grid-order-img {
+    order: 2;
+  }
+
+  .our-store-img {
+    width: 80%;
+  }
+
+  .our-store-text-div {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .our-store-h3 {
+    text-align: center;
+  }
+
+  .our-store-p {
+    text-align: center;
+  }
+
+  .coming-soon-img-background {
+    padding: 1.6rem;
+  }
+
+  .coming-soon-timer-p {
+    color: #88043d;
+    font-size: 2.2rem;
+    font-weight: 600;
+  }
+
+  .coming-soon-socials-div svg {
+    height: 3rem;
+    width: 3rem;
+  }
+
+  .footer-grid {
+    gap: 1.6rem;
+  }
+}
+
+/*----------------------------------------
+----------- MAX WIDTH 33EM --------------
+-----------------------------------------*/
+
+@media (max-width: 33em) {
+  .header {
+    background-color: #f7e6ed;
+    padding: 1.2rem 0;
+  }
+
+  .cta-left-grid {
+    padding: 1.2rem;
+  }
+
+  .cta-btn-div {
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+  }
+
+  .cta-btn {
+    padding: 0.8rem 1.2rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.6rem;
+    border: 2px solid #88043d;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.2rem;
+    transition: all 0.5s;
+  }
+
+  .heading-primary {
+    font-size: 4.2rem;
+    text-align: center;
+  }
+
+  .info-section {
+    width: 97%;
+  }
+
+  .shop-section {
+    padding: 9.6rem 3.6rem 0;
+  }
+
+  .shop-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .best-seller-section {
+    display: none;
+  }
+
+  .our-store-text-div {
+    width: 100%;
+    padding: 2.4rem 0.8rem;
+  }
+
+  .our-store-img {
+    width: 95%;
+  }
+
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/*----------------------------------------
+----------- MAX WIDTH 25EM --------------
+-----------------------------------------*/
+
+@media (max-width: 25em) {
+  .cta-btn-div {
+    flex-direction: column;
+  }
+
+  .cta-btn-1 {
+    padding: 0.4rem 1.8rem;
+  }
+
+  .cta-btn-2 {
+    padding: 0.4rem 1.2rem;
+  }
+
+  .info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .type-cake-div {
+    width: 100%;
+    gap: 1.2rem;
+    flex-direction: column;
+  }
+
+  .coming-soon-socials-div {
+    display: none;
+  }
+
+  .coming-soon-timer-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-div {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 80%;
+  }
+}
+
+/*----------------------------------------
+----------- MAX WIDTH 18EM --------------
+-----------------------------------------*/
+
+@media (max-width: 18em) {
+  .shop-cake-img {
+    width: 100%;
+  }
+
+  .ingredient-selection-box {
+    width: 60%;
+  }
+
+  .footer-div {
+    width: 95%;
+  }
+
+  .footer-form-input {
+    width: 100%;
+  }
+
+  .footer-form-btn {
+    width: 100%;
+  }
+}

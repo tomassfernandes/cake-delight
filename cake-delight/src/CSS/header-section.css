@@ -59,8 +59,21 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 1.6rem;
 }
 
 .header-icons-div svg {
   fill: #383838;
+}
+
+.nav-btn {
+  height: 3rem;
+  width: 3rem;
+  background: none;
+  border: none;
+  display: none;
+}
+
+.nav-btn svg {
+  cursor: pointer;
 }
