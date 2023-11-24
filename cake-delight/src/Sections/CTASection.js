@@ -1,4 +1,23 @@
+import React, { useState, useEffect } from "react";
+
 export default function CTASection() {
+  const [isNarrowScreen, setIsNarrowScreen] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsNarrowScreen(window.innerWidth <= 55 * 16); // 1 em = 16 pixels
+    };
+
+    handleResize(); // Set initial screen width
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      // Cleanup the event listener when the component unmounts
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   return (
     <section className="cta-section">
       <div className="section">
@@ -51,7 +70,7 @@ export default function CTASection() {
       <div className="icing-separator">
         <img
           className="icing-img"
-          src="/img/icing.png"
+          src={isNarrowScreen ? "/img/icing-phone.png" : "/img/icing.png"}
           alt="icing separating sections"
         ></img>
       </div>

@@ -298,14 +298,30 @@
     padding: 0.4rem 1.2rem;
   }
 
+  .cta-btn-1 svg {
+    display: none;
+  }
+
+  .cta-btn-2 svg {
+    display: none;
+  }
+
   .info-grid {
     grid-template-columns: 1fr;
+  }
+
+  .shop-section {
+    padding: 9.6rem 0.8rem 0;
   }
 
   .type-cake-div {
     width: 100%;
     gap: 1.2rem;
     flex-direction: column;
+  }
+
+  .dots-animation {
+    display: none;
   }
 
   .coming-soon-socials-div {
@@ -335,6 +351,10 @@
 -----------------------------------------*/
 
 @media (max-width: 18em) {
+  .header-main-div {
+    width: 95%;
+  }
+
   .shop-cake-img {
     width: 100%;
   }
