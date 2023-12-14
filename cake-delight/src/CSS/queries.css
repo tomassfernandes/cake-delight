@@ -111,13 +111,14 @@
     align-items: center;
     justify-content: center;
     gap: 2.4rem;
-    background-color: #88043d;
+    background-color: #88043dd6;
     transition: all 1s;
     transform: translateY(-100vh);
   }
 
   header .responsive-nav {
     transform: none;
+    z-index: 1000;
   }
 
   nav .nav-close-btn {

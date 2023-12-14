@@ -13,7 +13,7 @@ export default function Footer() {
   };
 
   return (
-    <footer className="footer">
+    <footer id="footer" className="footer">
       <div className="footer-grid">
         <div className="footer-div">
           <div className="logo-letter-footer-div">

@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { Link } from "react-scroll";
 
 export default function Header() {
   const navRef = useRef();
@@ -16,18 +17,37 @@ export default function Header() {
         </div>
 
         <nav ref={navRef} className="nav">
-          <a className="nav-link">
+          <Link
+            className="nav-link"
+            to="cta-section"
+            smooth={true}
+            duration={500}
+          >
             <span>H</span>ome
-          </a>
-          <a className="nav-link">
+          </Link>
+
+          <Link
+            className="nav-link"
+            to="shop-section"
+            smooth={true}
+            duration={500}
+          >
             <span>S</span>hop
-          </a>
-          <a className="nav-link">
+          </Link>
+
+          <Link
+            className="nav-link"
+            to="about-us-section"
+            smooth={true}
+            duration={500}
+          >
             <span>A</span>bout Us
-          </a>
-          <a className="nav-link">
+          </Link>
+
+          <Link className="nav-link" to="footer" smooth={true} duration={500}>
             <span>C</span>ontact
-          </a>
+          </Link>
+
           <button onClick={showNavBar} className="nav-btn nav-close-btn">
             <svg
               style={{ fill: "white", color: "white", stroke: "white" }}

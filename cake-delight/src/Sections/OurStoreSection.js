@@ -1,6 +1,6 @@
 export default function OurStoreSection() {
   return (
-    <section className="our-store-section">
+    <section id="about-us-section" className="our-store-section">
       <div class="custom-shape-divider-top-1700149315">
         <svg
           data-name="Layer 1"
