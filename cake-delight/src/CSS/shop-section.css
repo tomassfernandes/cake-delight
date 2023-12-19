@@ -164,6 +164,14 @@
   width: 1.5rem;
   height: 1.5rem;
   cursor: pointer;
+  transition: all 0.3s;
+}
+
+.ingredient-icon svg:hover {
+  fill: #88043d;
+  width: 1.5rem;
+  height: 1.5rem;
+  cursor: pointer;
 }
 
 .ingredient-confirm-btn {
