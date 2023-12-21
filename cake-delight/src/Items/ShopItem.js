@@ -178,7 +178,10 @@ export default function ShopItem({ displayAllCakes, cakeType }) {
   const handleIngredientSelectionBoxClose = (cakeId) => {
     setSelectedCakes((prevCakes) => ({
       ...prevCakes,
-      [cakeId]: null,
+      [cakeId]: {
+        ...prevCakes[cakeId],
+        price: +prevCakes[cakeId].price.toFixed(2), // Keep the updated price
+      },
     }));
   };
 
