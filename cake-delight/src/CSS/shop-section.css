@@ -52,6 +52,13 @@
   width: 85%;
 }
 
+.shop-cake-name-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
 .shop-cake-name {
   font-size: 2.2rem;
   color: #88043d;
@@ -63,17 +70,17 @@
   text-align: center;
 }
 
-.cake-plus-icon svg {
-  width: 2rem;
-  height: 2rem;
-  fill: #9d9d9d;
+.cake-plus-icon {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #9d9d9d;
   cursor: pointer;
-  margin-left: 0.8rem;
   transition: all 0.3s;
+  align-self: flex-start;
 }
 
-.cake-plus-icon svg:hover {
-  fill: #88043d;
+.cake-plus-icon:hover {
+  color: #88043d;
 }
 
 .cake-price {
@@ -91,6 +98,7 @@
   font-weight: 700;
   cursor: pointer;
   transition: all 0.3s;
+  margin-top: 2rem;
 }
 
 .shop-cake-btn:hover {
@@ -129,6 +137,7 @@
 .ingredient-selection-box h4 {
   color: #88043d;
   font-size: 1.6rem;
+  text-align: center;
 }
 
 .extra-ingredient-div {
