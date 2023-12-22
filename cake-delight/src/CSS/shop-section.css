@@ -168,36 +168,51 @@
   gap: 0.4rem;
 }
 
-.ingredient-icon svg {
-  fill: #383838;
-  width: 1.5rem;
-  height: 1.5rem;
+.ingredient-icon {
+  color: #383838;
+  font-size: 1.5rem;
   cursor: pointer;
   transition: all 0.3s;
 }
 
-.ingredient-icon svg:hover {
-  fill: #88043d;
-  width: 1.5rem;
-  height: 1.5rem;
-  cursor: pointer;
+.ingredient-icon:hover {
+  color: #88043d;
 }
 
-.ingredient-confirm-btn {
+.confirm-cancel-btn-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-top: 1.2rem;
+}
+
+.ingredient-btn {
   background-color: #383838;
   color: white;
-  border: none;
-  width: 70%;
-  padding: 0.2rem 0;
-  align-self: center;
-  margin-top: 1.2rem;
+  border: 2px solid #383838;
+  width: 7rem;
   cursor: pointer;
   border-radius: 5px;
   font-weight: 500;
   transition: all 0.5s;
 }
 
+.ingredient-confirm-btn {
+  background-color: #383838;
+  color: white;
+}
+
 .ingredient-confirm-btn:hover {
-  background-color: #9d9d9d;
+  background-color: #f7e6ed;
   color: #88043d;
+}
+
+.ingredient-cancel-btn {
+  background-color: white;
+  color: #383838;
+}
+
+.ingredient-cancel-btn:hover {
+  border: 2px solid #f7e6ed;
 }

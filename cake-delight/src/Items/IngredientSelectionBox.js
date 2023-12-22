@@ -14,17 +14,41 @@ export default function IngredientSelectionBox({
       <h4>Add extra:</h4>
       <ul>
         {ingredients.map((ingredient) => (
-          <li key={ingredient}>
-            {ingredient}
-            <button onClick={() => onIngredientSelect(ingredient)}>Add</button>
-            <button onClick={() => onRemoveIngredient(ingredient)}>
-              Remove
-            </button>
-          </li>
+          <div className="extra-ingredient-div">
+            <li key={ingredient} className="extra-ingredient-text-div">
+              <p className="extra-ingredient-text">{ingredient}</p>
+              <div className="ingredient-icon-div">
+                <span
+                  className="ingredient-icon"
+                  onClick={() => onIngredientSelect(ingredient)}
+                >
+                  +
+                </span>
+                <span
+                  className="ingredient-icon"
+                  onClick={() => onRemoveIngredient(ingredient)}
+                >
+                  -
+                </span>
+              </div>
+            </li>
+          </div>
         ))}
       </ul>
-      <button onClick={onConfirm}>Confirm</button>
-      <button onClick={onClose}>Cancel</button>
+      <div className="confirm-cancel-btn-div">
+        <button
+          className="ingredient-btn ingredient-confirm-btn"
+          onClick={onConfirm}
+        >
+          Confirm
+        </button>
+        <button
+          className="ingredient-btn ingredient-cancel-btn"
+          onClick={onClose}
+        >
+          Cancel
+        </button>
+      </div>
     </div>
   );
 }
