@@ -12,7 +12,7 @@ export default function Header() {
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
-      if (offset > 800) {
+      if (offset > 600) {
         // Adjust this value based on when you want the header to become sticky
         setSticky(true);
       } else {

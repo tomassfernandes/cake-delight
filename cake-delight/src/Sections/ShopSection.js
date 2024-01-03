@@ -1,5 +1,6 @@
 // ShopSection.js
 import ShopItem from "../Items/ShopItem";
+import { useState } from "react";
 
 const data = [
   {
@@ -93,16 +94,36 @@ const data = [
 ];
 
 export default function ShopSection() {
+  const [selectedCakeType, setSelectedCakeType] = useState("All");
+
+  const filteredData =
+    selectedCakeType === "All"
+      ? data
+      : data.filter((cake) => cake[selectedCakeType.toLowerCase()]);
+
+  const handleCakeTypeChange = (cakeType) => {
+    setSelectedCakeType(cakeType);
+  };
+
   return (
     <section className="shop-section">
       <h2 className="heading-secondary">Shop</h2>
       <div className="type-cake-div">
-        <p className="cake-type">All</p>
-        <p className="cake-type">Vegetrian</p>
-        <p className="cake-type">Vegan</p>
+        <p className="cake-type" onClick={() => handleCakeTypeChange("All")}>
+          All
+        </p>
+        <p
+          className="cake-type"
+          onClick={() => handleCakeTypeChange("Vegetarian")}
+        >
+          Vegetarian
+        </p>
+        <p className="cake-type" onClick={() => handleCakeTypeChange("Vegan")}>
+          Vegan
+        </p>
       </div>
       <div className="shop-grid">
-        {data.map((cake) => (
+        {filteredData.map((cake) => (
           <ShopItem key={cake.id} cake={cake} />
         ))}
       </div>

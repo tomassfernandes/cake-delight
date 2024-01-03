@@ -11,14 +11,14 @@ export default function ShopItem({ cake }) {
       ...prevIngredients,
       ingredient,
     ]);
-    setPrice((prevPrice) => prevPrice + 0.5);
+    setPrice((prevPrice) => parseFloat((prevPrice + 0.5).toFixed(2)));
   };
 
   const handleRemoveIngredient = (ingredient) => {
     setSelectedIngredients((prevIngredients) =>
       prevIngredients.filter((item) => item !== ingredient)
     );
-    setPrice((prevPrice) => prevPrice - 0.5);
+    setPrice((prevPrice) => parseFloat((prevPrice - 0.5).toFixed(2)));
   };
 
   const handleConfirm = () => {
@@ -53,6 +53,7 @@ export default function ShopItem({ cake }) {
 
         {showIngredientBox && (
           <IngredientSelectionBox
+            ingredients={cake.ingredients}
             onClose={() => setShowIngredientBox(false)}
             onIngredientSelect={handleIngredientSelect}
             onRemoveIngredient={handleRemoveIngredient}

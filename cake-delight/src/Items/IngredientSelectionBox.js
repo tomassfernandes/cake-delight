@@ -2,13 +2,12 @@
 import React from "react";
 
 export default function IngredientSelectionBox({
+  ingredients,
   onClose,
   onIngredientSelect,
   onRemoveIngredient,
   onConfirm,
 }) {
-  const ingredients = ["Ingredient 1", "Ingredient 2", "Ingredient 3"];
-
   return (
     <div className="ingredient-selection-box">
       <h4>Add extra:</h4>
@@ -16,7 +15,9 @@ export default function IngredientSelectionBox({
         {ingredients.map((ingredient) => (
           <div className="extra-ingredient-div">
             <li key={ingredient} className="extra-ingredient-text-div">
-              <p className="extra-ingredient-text">{ingredient}</p>
+              <p className="extra-ingredient-text">
+                {ingredient} (ingredient count)
+              </p>
               <div className="ingredient-icon-div">
                 <span
                   className="ingredient-icon"
