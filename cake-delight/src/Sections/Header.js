@@ -1,15 +1,36 @@
-import { useRef } from "react";
+import { useRef, useEffect, useState } from "react";
 import { Link } from "react-scroll";
 
 export default function Header() {
   const navRef = useRef();
+  const [isSticky, setSticky] = useState(false);
 
   function showNavBar() {
     navRef.current.classList.toggle("responsive-nav");
   }
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      if (offset > 800) {
+        // Adjust this value based on when you want the header to become sticky
+        setSticky(true);
+      } else {
+        setSticky(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const headerClass = isSticky ? "header sticky" : "header";
+
   return (
-    <header className="header">
+    <header className={headerClass}>
       <div className="header-main-div">
         <div className="logo-letter-div">
           <p className="logo-letter logo-letter-1">Cake</p>
