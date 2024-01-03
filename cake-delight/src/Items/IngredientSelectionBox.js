@@ -3,6 +3,7 @@ import React from "react";
 
 export default function IngredientSelectionBox({
   ingredients,
+  ingredientCounts,
   onClose,
   onIngredientSelect,
   onRemoveIngredient,
@@ -16,12 +17,13 @@ export default function IngredientSelectionBox({
           <div className="extra-ingredient-div">
             <li key={ingredient} className="extra-ingredient-text-div">
               <p className="extra-ingredient-text">
-                {ingredient} (ingredient count)
+                {ingredient}({ingredientCounts[ingredient] || 0})
               </p>
               <div className="ingredient-icon-div">
                 <span
                   className="ingredient-icon"
                   onClick={() => onIngredientSelect(ingredient)}
+                  disabled={ingredientCounts[ingredient] >= 3}
                 >
                   +
                 </span>

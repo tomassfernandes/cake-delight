@@ -5,20 +5,37 @@ export default function ShopItem({ cake }) {
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [price, setPrice] = useState(cake.price);
   const [showIngredientBox, setShowIngredientBox] = useState(false);
+  const [ingredientCounts, setIngredientCounts] = useState({});
 
   const handleIngredientSelect = (ingredient) => {
-    setSelectedIngredients((prevIngredients) => [
-      ...prevIngredients,
-      ingredient,
-    ]);
-    setPrice((prevPrice) => parseFloat((prevPrice + 0.5).toFixed(2)));
+    if (
+      selectedIngredients.length < 3 &&
+      (ingredientCounts[ingredient] || 0) < 3
+    ) {
+      setSelectedIngredients((prevIngredients) => [
+        ...prevIngredients,
+        ingredient,
+      ]);
+      setIngredientCounts((prevCounts) => ({
+        ...prevCounts,
+        [ingredient]: (prevCounts[ingredient] || 0) + 1,
+      }));
+      setPrice((prevPrice) => parseFloat((prevPrice + 0.5).toFixed(2)));
+    }
   };
 
   const handleRemoveIngredient = (ingredient) => {
-    setSelectedIngredients((prevIngredients) =>
-      prevIngredients.filter((item) => item !== ingredient)
-    );
-    setPrice((prevPrice) => parseFloat((prevPrice - 0.5).toFixed(2)));
+    if (ingredientCounts[ingredient] > 0) {
+      setSelectedIngredients((prevIngredients) =>
+        prevIngredients.filter((item) => item !== ingredient)
+      );
+      setIngredientCounts((prevCounts) => {
+        const newCounts = { ...prevCounts };
+        newCounts[ingredient] = Math.max(0, prevCounts[ingredient] - 1);
+        return newCounts;
+      });
+      setPrice((prevPrice) => parseFloat((prevPrice - 0.5).toFixed(2)));
+    }
   };
 
   const handleConfirm = () => {
@@ -26,7 +43,10 @@ export default function ShopItem({ cake }) {
     const cakeDetails = {
       id: cake.id,
       name: cake.name,
-      ingredients: selectedIngredients,
+      ingredients: selectedIngredients.map((ingredient) => ({
+        name: ingredient,
+        count: ingredientCounts[ingredient] || 0,
+      })),
       price: price,
     };
     console.log("Cake details:", cakeDetails);
@@ -58,6 +78,7 @@ export default function ShopItem({ cake }) {
             onIngredientSelect={handleIngredientSelect}
             onRemoveIngredient={handleRemoveIngredient}
             onConfirm={handleConfirm}
+            ingredientCounts={ingredientCounts}
           />
         )}
 
