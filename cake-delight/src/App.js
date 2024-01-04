@@ -8,17 +8,25 @@ import ComingSoonSection from "./Sections/ComingSoonSection";
 import Cart from "./Cart";
 import Footer from "./Sections/Footer";
 
+import { useState } from "react";
+
 function App() {
+  const [cartVisible, setCartVisible] = useState(false);
+
+  const handleToggleCart = () => {
+    setCartVisible(!cartVisible);
+  };
+
   return (
     <>
-      <Header />
+      <Header cartVisible={cartVisible} onToggleCart={handleToggleCart} />
       <CTASection />
       <InfoSection />
       <ShopSection />
       <BestSellerSection />
       <OurStoreSection />
       <ComingSoonSection />
-      <Cart />
+      <Cart cartVisible={cartVisible} onToggleCart={handleToggleCart} />
       <Footer />
     </>
   );

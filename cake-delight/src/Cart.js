@@ -1,10 +1,8 @@
 import React from "react";
-import { useState } from "react";
 import { useCart } from "./CartContext";
 
-export default function Cart() {
+export default function Cart({ cartVisible, onToggleCart }) {
   const { cartState, dispatch } = useCart();
-  const [cartVisible, setCartVisible] = useState(false);
 
   const totalPrice = cartState.cartItems.reduce(
     (total, item) => total + item.price,
@@ -20,7 +18,8 @@ export default function Cart() {
   };
 
   const handleToggleCart = () => {
-    setCartVisible(!cartVisible);
+    // Call the parent component's function to update cartVisible
+    onToggleCart();
   };
 
   return (

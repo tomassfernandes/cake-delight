@@ -1,3 +1,42 @@
+/*-------------------------------------
+--------------- CART ICON -------------
+---------------------------------------*/
+
+.cart-icon-main-div {
+  cursor: pointer;
+}
+
+.cart-icon svg {
+  width: 3rem;
+  height: 3rem;
+}
+
+.cart-icon-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.cart-icon-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: red;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+  color: white;
+  position: absolute;
+  top: -0.5rem;
+  right: -1rem;
+  font-size: 1.2rem;
+}
+
+/*-------------------------------------
+--------------- CART SECTION -------------
+---------------------------------------*/
+
 .cart-section {
   position: fixed;
   height: 100%;
