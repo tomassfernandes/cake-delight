@@ -59,8 +59,11 @@ export default function ShopItem({ cake }) {
   };
 
   const handleAddToCart = () => {
+    const uniqueId = `${cake.id}_${Date.now()}`;
+
     const cakeDetails = {
-      id: cake.id,
+      id: uniqueId,
+      img: cake.img,
       name: cake.name,
       ingredients: selectedIngredients.map((ingredient) => ({
         name: ingredient,
