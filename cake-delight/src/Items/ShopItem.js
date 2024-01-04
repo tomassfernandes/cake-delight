@@ -84,7 +84,7 @@ export default function ShopItem({ cake }) {
 
         <p className="cake-price">{price}€</p>
       </div>
-      <button className="shop-cake-btn">SHOP NOW</button>
+      <button className="shop-cake-btn">ADD TO CART</button>
     </div>
   );
 }

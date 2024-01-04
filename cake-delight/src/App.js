@@ -5,6 +5,7 @@ import ShopSection from "./Sections/ShopSection";
 import BestSellerSection from "./Sections/BestSellerSection";
 import OurStoreSection from "./Sections/OurStoreSection";
 import ComingSoonSection from "./Sections/ComingSoonSection";
+import Cart from "./Cart";
 import Footer from "./Sections/Footer";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <BestSellerSection />
       <OurStoreSection />
       <ComingSoonSection />
+      <Cart />
       <Footer />
     </>
   );

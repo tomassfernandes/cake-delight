@@ -1,0 +1,9 @@
+.cart-section {
+  position: fixed;
+  height: 100vh;
+  top: 0;
+  right: 0;
+  width: 40%;
+  background-color: #88043d;
+  z-index: 10001;
+}
