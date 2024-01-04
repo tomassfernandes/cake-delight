@@ -3,8 +3,6 @@
   padding: 2.4rem 0;
   position: relative;
   z-index: 1000;
-  transition: opacity 0.5s ease; /* Apply transition only to opacity */
-  opacity: 1; /* Initially set opacity to 1 */
 }
 
 .sticky {
@@ -12,7 +10,8 @@
   top: 0;
   width: 100%;
   padding: 0.8rem 0;
-  animation: fadeInDown 0.5s; /* Optional: Add a fade-in effect */
+  opacity: 0; /* Initially set to 0 for fade-in effect */
+  animation: fadeInDown 0.5s forwards; /* Apply the fadeInDown animation */
 }
 
 @keyframes fadeInDown {

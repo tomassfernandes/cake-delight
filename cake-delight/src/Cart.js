@@ -4,10 +4,9 @@ import { useCart } from "./CartContext";
 export default function Cart({ cartVisible, onToggleCart }) {
   const { cartState, dispatch } = useCart();
 
-  const totalPrice = cartState.cartItems.reduce(
-    (total, item) => total + item.price,
-    0
-  );
+  const totalPrice = cartState.cartItems
+    .reduce((total, item) => total + item.price * item.quantity, 0)
+    .toFixed(2);
 
   const handleRemoveItem = (itemId) => {
     // Dispatch the REMOVE_FROM_CART action with the item ID
@@ -20,6 +19,22 @@ export default function Cart({ cartVisible, onToggleCart }) {
   const handleToggleCart = () => {
     // Call the parent component's function to update cartVisible
     onToggleCart();
+  };
+
+  const handleAddCake = (itemId) => {
+    // Dispatch the INCREASE_QUANTITY action with the item ID
+    dispatch({
+      type: "INCREASE_QUANTITY",
+      payload: { id: itemId },
+    });
+  };
+
+  const handleDecreaseCake = (itemId) => {
+    // Dispatch the DECREASE_QUANTITY action with the item ID
+    dispatch({
+      type: "DECREASE_QUANTITY",
+      payload: { id: itemId },
+    });
   };
 
   return (
@@ -47,12 +62,24 @@ export default function Cart({ cartVisible, onToggleCart }) {
                 </div>
 
                 <div className="cart-adding-div">
-                  <span className="cart-adding-text cart-adding-btn">-</span>
-                  <p className="cart-adding-text">1</p>
-                  <span className="cart-adding-text cart-adding-btn">+</span>
+                  <span
+                    className="cart-adding-text cart-adding-btn"
+                    onClick={() => handleDecreaseCake(item.id)}
+                  >
+                    -
+                  </span>
+                  <p className="cart-adding-text">{item.quantity}</p>
+                  <span
+                    className="cart-adding-text cart-adding-btn"
+                    onClick={() => handleAddCake(item.id)}
+                  >
+                    +
+                  </span>
                 </div>
 
-                <p className="cart-cake-price">{item.price}€</p>
+                <p className="cart-cake-price">
+                  {(item.price * item.quantity).toFixed(2)}€
+                </p>
 
                 <span
                   className="delete-cake-item-btn"
