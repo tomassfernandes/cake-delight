@@ -8,6 +8,51 @@
   z-index: 10001;
 }
 
+.cart-main-div {
+  padding: 2.4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.2rem;
+}
+
+.cart-heading-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2.2rem;
+}
+
+.cart-close-btn {
+  font-size: 2.4rem;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.cart-heading-secondary {
+  font-size: 2.6rem;
+  color: white;
+  text-decoration: underline;
+}
+
+.cart-cake-item-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cart-cake-img-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-cake-img {
+  width: 100%;
+}
+
 .cart-cake-name {
   color: white;
 }
