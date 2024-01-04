@@ -6,6 +6,13 @@
   width: 40%;
   background-color: #88043d;
   z-index: 10001;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: all 0.5s;
+}
+
+.cart-visible {
+  transform: translateX(0%);
 }
 
 .cart-main-div {
@@ -14,6 +21,26 @@
   flex-direction: column;
   justify-content: center;
   gap: 2.2rem;
+}
+
+.cart-items-container {
+  display: flex;
+  flex-direction: column;
+  gap: 3.6rem;
+  overflow-y: auto; /* Add this line for vertical scrollbar */
+}
+
+.cart-section::-webkit-scrollbar {
+  width: 12px;
+}
+
+.cart-section::-webkit-scrollbar-thumb {
+  background-color: #ff76b1; /* Color of the scrollbar thumb */
+  border-radius: 6px;
+}
+
+.cart-section::-webkit-scrollbar-track {
+  background-color: #88043d; /* Color of the scrollbar track */
 }
 
 .cart-heading-div {
@@ -40,6 +67,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: relative;
 }
 
 .cart-cake-img-div {
@@ -90,4 +118,54 @@
   font-size: 2.2rem;
   font-weight: 700;
   color: white;
+}
+
+.delete-cake-item-btn {
+  color: white;
+  font-size: 2rem;
+  position: absolute;
+  top: 0rem;
+  right: 0rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.cart-checkout-div {
+  align-self: flex-end;
+  justify-self: flex-end;
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  margin-top: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.8rem;
+  background-color: #88043d;
+}
+
+.cart-checkout-text {
+  color: white;
+  font-weight: 700;
+  font-size: 3.2rem;
+}
+
+.cart-checkout-btn {
+  background-color: #ff76b1;
+  color: white;
+  padding: 1.2rem 2.4rem;
+  font-weight: 700;
+  border: 2px solid #000000;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.cart-checkout-btn:hover {
+  background-color: #88043d;
+  border: 2px solid #ff76b1;
+}
+
+.cart-seperator {
+  height: 0.2rem;
+  width: 100%;
+  background-color: rgba(192, 192, 192, 0.443);
 }
