@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import IngredientSelectionBox from "../Items/IngredientSelectionBox";
+import { useCart } from "../CartContext";
 
 export default function ShopItem({ cake }) {
   const [selectedIngredients, setSelectedIngredients] = useState([]);
   const [price, setPrice] = useState(cake.price);
   const [showIngredientBox, setShowIngredientBox] = useState(false);
   const [ingredientCounts, setIngredientCounts] = useState({});
+
+  const { dispatch } = useCart();
 
   const handleIngredientSelect = (ingredient) => {
     if (
@@ -55,6 +58,20 @@ export default function ShopItem({ cake }) {
     setShowIngredientBox(false);
   };
 
+  const handleAddToCart = () => {
+    const cakeDetails = {
+      id: cake.id,
+      name: cake.name,
+      ingredients: selectedIngredients.map((ingredient) => ({
+        name: ingredient,
+        count: ingredientCounts[ingredient] || 0,
+      })),
+      price: price,
+    };
+
+    dispatch({ type: "ADD_TO_CART", payload: cakeDetails });
+  };
+
   return (
     <div className="shop-cake-div">
       <img className="shop-cake-img" src={cake.img} alt={cake.name} />
@@ -84,7 +101,9 @@ export default function ShopItem({ cake }) {
 
         <p className="cake-price">{price}€</p>
       </div>
-      <button className="shop-cake-btn">ADD TO CART</button>
+      <button className="shop-cake-btn" onClick={handleAddToCart}>
+        ADD TO CART
+      </button>
     </div>
   );
 }
