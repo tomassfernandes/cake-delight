@@ -280,6 +280,10 @@
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  .cart-section {
+    width: 35rem;
+  }
 }
 
 /*----------------------------------------
@@ -345,6 +349,14 @@
     margin: 0 auto;
     width: 80%;
   }
+
+  .cart-section {
+    width: 30rem;
+  }
+
+  .cart-main-div {
+    padding: 1.2rem;
+  }
 }
 
 /*----------------------------------------
@@ -374,5 +386,14 @@
 
   .footer-form-btn {
     width: 100%;
+  }
+
+  .cart-section {
+    width: 100%;
+  }
+
+  .cart-cake-item-div {
+    flex-direction: column;
+    gap: 1.6rem;
   }
 }
