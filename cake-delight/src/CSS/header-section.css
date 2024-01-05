@@ -94,8 +94,13 @@
   background: none;
   border: none;
   display: none;
+  cursor: pointer;
 }
 
-.nav-btn svg {
-  cursor: pointer;
+.nav-menu-btn svg {
+  transition: all 0.3s;
+}
+
+.nav-menu-btn svg:hover {
+  color: #9f9f9f !important;
 }

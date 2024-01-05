@@ -9,6 +9,12 @@
 .cart-icon svg {
   width: 3rem;
   height: 3rem;
+  transition: all 0.3s;
+  color: #383838;
+}
+
+.cart-icon svg:hover {
+  color: #9f9f9f;
 }
 
 .cart-icon-div {
