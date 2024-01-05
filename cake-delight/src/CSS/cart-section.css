@@ -48,6 +48,9 @@
   overflow-y: auto;
   transform: translateX(100%);
   transition: all 0.5s;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .cart-visible {
@@ -171,7 +174,7 @@
 
 .cart-checkout-div {
   align-self: flex-end;
-  justify-self: flex-end;
+  justify-self: end;
   margin-right: 2rem;
   margin-bottom: 2rem;
   margin-top: 2.2rem;
