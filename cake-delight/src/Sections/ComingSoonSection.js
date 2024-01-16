@@ -5,7 +5,7 @@ import animationData from "../assets/loading-dots-animation.json";
 import { instagramIcon, twitterIcon, facebookIcon } from "../Items/SocialItems";
 
 export default function ComingSoonSection() {
-  const eventDate = new Date("2024-06-31T23:59:59");
+  const eventDate = new Date("2024-02-25T23:59:59");
 
   return (
     <section className="coming-soon-section">
