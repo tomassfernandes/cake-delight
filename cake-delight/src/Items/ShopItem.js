@@ -11,10 +11,7 @@ export default function ShopItem({ cake }) {
   const { dispatch } = useCart();
 
   const handleIngredientSelect = (ingredient) => {
-    if (
-      selectedIngredients.length < 3 &&
-      (ingredientCounts[ingredient] || 0) < 3
-    ) {
+    if ((ingredientCounts[ingredient] || 0) < 3) {
       setSelectedIngredients((prevIngredients) => [
         ...prevIngredients,
         ingredient,
@@ -32,11 +29,10 @@ export default function ShopItem({ cake }) {
       setSelectedIngredients((prevIngredients) =>
         prevIngredients.filter((item) => item !== ingredient)
       );
-      setIngredientCounts((prevCounts) => {
-        const newCounts = { ...prevCounts };
-        newCounts[ingredient] = Math.max(0, prevCounts[ingredient] - 1);
-        return newCounts;
-      });
+      setIngredientCounts((prevCounts) => ({
+        ...prevCounts,
+        [ingredient]: Math.max(0, prevCounts[ingredient] - 1),
+      }));
       setPrice((prevPrice) => parseFloat((prevPrice - 0.5).toFixed(2)));
     }
   };
